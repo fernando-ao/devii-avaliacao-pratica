@@ -43,4 +43,9 @@ routes.get("/:id", (req, res) => {
   res.status(404).send("Product not found");
 });
 
+routes.post("/", (req, res) => {
+  products.push(req.body);
+  res.status(200).send("OK");
+});
+
 module.exports = routes;
