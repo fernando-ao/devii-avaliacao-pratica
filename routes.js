@@ -33,8 +33,8 @@ routes.get("/", (req, res) => {
 });
 
 routes.get("/:id", (req, res) => {
+  const id = req.params.id;
   for (const item of products) {
-    const id = req.params.id;
     if (id == item.id) {
       res.send(item);
       return;
@@ -46,6 +46,18 @@ routes.get("/:id", (req, res) => {
 routes.post("/", (req, res) => {
   products.push(req.body);
   res.status(200).send("OK");
+});
+
+routes.put("/:id", (req, res) => {
+  const id = req.params.id;
+  for (let i = 0; i < products.length; i++) {
+    if (id == products[i].id) {
+      products[i] = req.body;
+      res.status(200).send("OK");
+      break;
+    }
+  }
+  res.status(404).send("Product not found");
 });
 
 module.exports = routes;
