@@ -60,4 +60,16 @@ routes.put("/:id", (req, res) => {
   res.status(404).send("Product not found");
 });
 
+routes.delete("/:id", (req, res) => {
+  const id = req.params.id;
+  for (let i = 0; i < products.length; i++) {
+    if (id == products[i].id) {
+      products.splice(i, 1);
+      res.status(200).send("OK");
+      break;
+    }
+  }
+  res.status(404).send("Product not found");
+});
+
 module.exports = routes;
