@@ -1,0 +1,15 @@
+{
+  "name": "devii-avaliacao-pratica",
+  "version": "1.0.0",
+  "description": "Avaliação Prática da matéria de Desenvolvimento Web II",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Fernando Augusto Ortolan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
